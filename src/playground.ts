@@ -1,8 +1,8 @@
 console.log("Module 02 - Juan Romero López");
 
-const array = ["Hola", true, 23, "Adios"];
+const arrayTest = ["Hola", true, 23, "Adios"];
 
-const car = {
+const objectTest = {
   a: "Name",
   b: true,
   c: 84,
@@ -14,19 +14,19 @@ const car = {
 
 // Head
 
-const head = ([first]) => {
+const head = ([first]: Array<any>) => {
   return first;
 };
 
-console.log(head(array));
+console.log(head(arrayTest));
 
 // Tail
 
-const tail = ([, ...arg]) => {
+const tail = ([, ...arg]: Array<any>) => {
   return arg;
 };
 
-console.log(tail(array));
+console.log(tail(arrayTest));
 
 // Init
 
@@ -34,7 +34,7 @@ const init = (arg) => {
   return arg.slice(0, arg.length - 1);
 };
 
-console.log(init(array));
+console.log(init(arrayTest));
 
 // Last
 
@@ -42,7 +42,7 @@ const last = (arg) => {
   return arg.pop();
 };
 
-console.log(last(array));
+console.log(last(arrayTest));
 
 /**
  * Ejecicio 2 - Concat
@@ -73,7 +73,7 @@ function clone(object) {
   return { ...object };
 }
 
-console.log(clone(car));
+console.log(clone(objectTest));
 
 // Merge
 
