@@ -39,7 +39,7 @@ console.log(init(arrayTest));
 // Last
 
 const last = (arg) => {
-  return arg.pop();
+  return [...arg].pop();
 };
 
 console.log(last(arrayTest));
@@ -87,3 +87,27 @@ function merge(source, target) {
 }
 
 console.log(merge(a, b));
+
+/**
+ * Ejecicio 4 - Read Books
+ */
+
+interface Book {
+  title: string;
+  isRead: boolean;
+}
+
+const books: Array<Book> = [
+  { title: "Harry Potter y la piedra filosofal", isRead: true },
+  { title: "Canción de hielo y fuego", isRead: false },
+  { title: "Devastación", isRead: true },
+];
+
+function isBookRead(books: Array<Book>, titleToSearch: string) {
+  var book = books.find((b) => b.title === titleToSearch);
+  return book ? book.isRead : false;
+}
+
+console.log(isBookRead(books, "Devastación")); // true
+console.log(isBookRead(books, "Canción de hielo y fuego")); // false
+console.log(isBookRead(books, "Los Pilares de la Tierra")); // false
