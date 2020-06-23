@@ -111,3 +111,35 @@ function isBookRead(books: Array<Book>, titleToSearch: string) {
 console.log(isBookRead(books, "Devastación")); // true
 console.log(isBookRead(books, "Canción de hielo y fuego")); // false
 console.log(isBookRead(books, "Los Pilares de la Tierra")); // false
+
+/**
+ * Ejecicio 5 - Slot Machine
+ */
+
+class SlothMachine {
+  countMoney: number;
+
+  constructor() {
+    this.countMoney = 0;
+  }
+
+  play() {
+    this.countMoney++;
+    console.log(
+      this.generateRandomSequence()
+        ? `Congratulations!!!. You won ${this.countMoney} coins!!`
+        : "Good luck next time!!"
+    );
+  }
+
+  private generateRandomSequence(): boolean {
+    return Math.random() >= 0.5 && Math.random() >= 0.5 && Math.random() >= 0.5;
+  }
+}
+
+const machine1 = new SlothMachine();
+machine1.play();
+machine1.play();
+machine1.play();
+machine1.play();
+machine1.play();
