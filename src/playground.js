@@ -2,6 +2,12 @@ console.log("Module 02 - Juan Romero López");
 
 const array = ["Hola", true, 23, "Adios"];
 
+const car = {
+  a: "Name",
+  b: true,
+  c: 84,
+};
+
 /**
  * Ejecicio 1 - Array operations
  */
@@ -44,7 +50,7 @@ console.log(last(array));
 
 const concat = (...args) => {
   return [].concat(...args);
-}; // Implementation here.
+};
 
 console.log(
   concat(
@@ -58,9 +64,26 @@ console.log(
 );
 
 /**
- * Ejecicio 3 - Clone Merge
+ * Ejecicio 3
  */
 
-function clone(source) {
-  console.log(...source);
+// Clone
+
+function clone(object) {
+  return { ...object };
 }
+
+console.log(clone(car));
+
+// Merge
+
+//Assert
+const a = { name: "Maria", surname: "Ibañez", country: "SPA" };
+const b = { name: "Luisa", age: 31, married: true };
+
+function merge(source, target) {
+  //return Object.assign({}, target, source);
+  return { ...target, ...source };
+}
+
+console.log(merge(a, b));
